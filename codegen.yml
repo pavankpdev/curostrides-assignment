@@ -2,7 +2,7 @@ overwrite: true
 schema: "https://rickandmortyapi.com/graphql"
 documents: "*/*.graphql"
 generates:
-  graphql/graphql.tsx:
+  graphql/graphql-gen.tsx:
     plugins:
       - "typescript"
       - "typescript-operations"
