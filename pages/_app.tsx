@@ -1,6 +1,7 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+import Head from "next/head";
 
 const client = new ApolloClient({
   uri: 'https://rickandmortyapi.com/graphql',
@@ -9,9 +10,16 @@ const client = new ApolloClient({
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-      <ApolloProvider client={client}>
-        <Component {...pageProps} />
-      </ApolloProvider>
+      <>
+          <Head>
+              <title>
+                  Rick and morty
+              </title>
+          </Head>
+          <ApolloProvider client={client}>
+              <Component {...pageProps} />
+          </ApolloProvider>
+      </>
   )
 }
 
