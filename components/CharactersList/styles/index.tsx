@@ -14,6 +14,7 @@ export const List = styled.table`
 `;
 
 export const ListHead = styled.thead`
+    background-color: #8bc34a;
 `;
 
 export const ListBody = styled.tbody`
@@ -41,6 +42,11 @@ export const ListItem = styled.td`
           };
   
 `;
+
+export const LoadingText = styled.p`
+  text-align: center;
+  font-size: 24px;
+`
 
 
 
