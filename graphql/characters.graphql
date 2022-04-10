@@ -1,5 +1,10 @@
 query getCharacters ($page: Int!) {
     characters(page: $page) {
+        info{
+            prev
+            pages
+            next
+        }
         results {
             id
             name
