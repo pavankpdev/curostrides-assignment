@@ -1,5 +1,12 @@
 import styled from "styled-components";
 
+type ListRowProps =  {
+    isHeader?: boolean
+}
+type ListItemProps =  {
+    isOriginUnknown?: boolean,
+}
+
 export const List = styled.table`
   font-family: arial, sans-serif;
   border-collapse: collapse;
@@ -7,15 +14,17 @@ export const List = styled.table`
 `;
 
 export const ListHead = styled.thead`
-  background-color: #8bc34a;
 `;
 
 export const ListBody = styled.tbody`
-  background-color: #eeeeee;
+  background-color: #eeeeee
 `;
 
 export const ListRow = styled.tr`
-  
+  background-color:
+          ${(props:ListRowProps ) =>
+                  props.isHeader ? '#8bc34a' : '#eeeeee'
+          };
 `;
 
 export const ListHeadItem = styled.th`
@@ -26,6 +35,11 @@ export const ListHeadItem = styled.th`
 export const ListItem = styled.td`
   padding: .5rem;
   text-align: center;
+  background-color:
+          ${(props:ListItemProps ) =>
+                  props.isOriginUnknown ? '#ffadad' : '#eeeeee'
+          };
+  
 `;
 
 

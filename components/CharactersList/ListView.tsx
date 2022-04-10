@@ -10,7 +10,8 @@ const ListView: React.FC<React.PropsWithChildren<{list: Character[]}>> = ({list}
     return <>
         <List>
             <ListHead>
-                <ListRow>
+                <ListRow isHeader>
+                    <ListHeadItem>Slno</ListHeadItem>
                     <ListHeadItem>Name</ListHeadItem>
                     <ListHeadItem>Status</ListHeadItem>
                     <ListHeadItem>Gender</ListHeadItem>
@@ -22,11 +23,12 @@ const ListView: React.FC<React.PropsWithChildren<{list: Character[]}>> = ({list}
                 {
                     list.map((character: Character, index: number) => (
                         <ListRow key={index}>
+                            <ListItem>{character.id}</ListItem>
                             <ListItem>{character.name}</ListItem>
                             <ListItem>{character.status}</ListItem>
                             <ListItem>{character.gender}</ListItem>
                             <ListItem>{character.location?.name}</ListItem>
-                            <ListItem>{character.origin?.name}</ListItem>
+                            <ListItem isOriginUnknown={character.origin?.name === 'unknown'}>{character.origin?.name}</ListItem>
                         </ListRow>
                     ))
                 }
